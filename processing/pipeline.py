@@ -102,7 +102,8 @@ def fit(pipeline: pipeline.Pipeline, problem: problem.Problem, input_dataset: co
 
     fitted_runtime, _, result = runtime.fit(
         pipeline, problem, [input_dataset], hyperparams=hyperparams, random_seed=random_seed,
-        volumes_dir=volumes_dir, context=metadata_base.Context.TESTING, runtime_environment=pipeline_run.RuntimeEnvironment()
+        volumes_dir=volumes_dir, context=metadata_base.Context.TESTING, runtime_environment=pipeline_run.RuntimeEnvironment(),
+        expose_produced_outputs=True
     )
 
     if result.has_error():
